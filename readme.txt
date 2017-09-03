@@ -17,3 +17,10 @@ Book.java represents Entity.
 BookRepository.java is the wrapper on CrudRepository which provides Spring Data JPA out of box CRUD operations.
 BookService.java provides API to work with Book entity operations.
 BookController.java is the RESTController which handles various GET/POST/PUT requests. Tested from postman.
+
+Sample REST calls (tested via postman)
+to get all books
+GET - http://localhost:8080/books
+GET book based on id  - http://localhost:8080/books/{bookId}
+
+
