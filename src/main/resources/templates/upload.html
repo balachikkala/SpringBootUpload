@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+label {
+	display: block;
+	margin-bottom: -1em;
+}
+
+input {
+	display: block;
+	position: relative;
+	left: 7em;
+	top: -0.5em;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+</style>
+</head>
+
+<body>
+	<h2>Book Management</h2>
+
+	<form method="POST" id="uploadForm" action="/upload" enctype="multipart/form-data">
+	<div>
+	<label>Author</label>
+	<input type="text" name="author" required="required"/>
+	</div>
+	<div>
+	<label>Title</label>
+	<input type="text" name="title" required="required"/>
+	</div>
+	<div>
+	<label>Upload Book</label>
+	<input type="file" name="uploadfile" required="required"/>
+	</div>
+	<br/>
+	<div>
+	<input type="submit" value="Add Book" id="btnSubmit" />
+	</div>
+	</form>
+	<br/>
+	<div>
+		<div>Uploaded Books:</div>
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Title</th>
+					<th>Author</th>					
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="book : ${allBooks}">
+				<td th:text="${book.bookId}">#</td>
+				<td th:text="${book.bookTitle}">Title</td>
+				<td th:text="${book.bookAuthor}">Author</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

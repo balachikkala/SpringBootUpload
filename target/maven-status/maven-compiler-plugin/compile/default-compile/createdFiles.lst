@@ -1,0 +1,7 @@
+demo\upload\book\BookService.class
+demo\upload\controller\FileUploadDemoController.class
+demo\upload\book\BookController.class
+demo\upload\book\Book.class
+demo\upload\FileUploadDemo.class
+demo\upload\errorhandlers\ErrorHandler.class
+demo\upload\book\BookRepository.class
